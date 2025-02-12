@@ -1,8 +1,7 @@
-import axios from 'axios';
-
 const axiosInstance = axios.create({
-  baseURL: 'https://mensshop.onrender.com/api', // Always use the deployed URL
-  withCredentials: true, // Send cookies to the server
+  baseURL:
+    import.meta.env.MODE === 'development'
+      ? 'http://localhost:5000/api'
+      : 'https://mensshop.onrender.com/api',
+  withCredentials: true,
 });
-
-export default axiosInstance;
